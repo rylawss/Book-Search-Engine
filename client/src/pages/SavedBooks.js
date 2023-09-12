@@ -7,6 +7,7 @@ import { REMOVE_BOOK } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 
+//Renders the SavedBooks component
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   const userData = data?.me || data?.user || {};
@@ -20,6 +21,7 @@ const SavedBooks = () => {
     return <h2>`Error: ${error.message}`</h2>;
   }
 
+  // Function to delete a book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -32,7 +34,6 @@ const SavedBooks = () => {
         variables: { bookId: bookId },
       });
 
-      // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
       console.error(err);
