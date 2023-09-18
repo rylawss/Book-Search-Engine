@@ -14,8 +14,8 @@ This application is a book search engine. The user can signup for an account the
 
 ## Links
 
-[Heroku]()
-[Github]()
+[Heroku](https://book-search-rl-0c2bb539662f.herokuapp.com/)
+[Github](https://github.com/rylawss/Book-Search-Engine)
 
 ## License
 
